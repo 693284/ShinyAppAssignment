@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2380189981",
+    "hash" : "1141141228",
     "id" : "B5D991C6",
-    "lastKnownWriteTime" : 1555365094,
-    "last_content_update" : 1555365094,
+    "lastKnownWriteTime" : 1555444994,
+    "last_content_update" : 1555444994764,
     "path" : "~/2019 Spring - Graduate/7709G M3 30322 R programming/new project/ShinyAppAssignment/app.R",
     "project_path" : "app.R",
     "properties" : {
+        "cursorPosition" : "24,28",
+        "scrollLine" : "0"
     },
     "relative_order" : 1,
     "source_on_save" : false,

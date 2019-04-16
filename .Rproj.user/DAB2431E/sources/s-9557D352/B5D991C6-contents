@@ -22,7 +22,7 @@ ui <- fluidPage( # everything inside is an input into fluidpage function (shiny 
          sliderInput("bins",                 # here u r setting up how much the slider moves; inside the bins change
                      "Number of bins:",
                      min = 1,
-                     max = 50,
+                     max = 60,
                      value = 30)
       ),
       
