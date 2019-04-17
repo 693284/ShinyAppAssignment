@@ -14,7 +14,7 @@ library(shiny) # we load shiny package
 ui <- fluidPage( # everything inside is an input into fluidpage function (shiny func that sets up webpages)
    
    # Application title
-   titlePanel("Old Faithful Geyser Data"), # this is a title of your app; when using comma at the end - you are adding more stuff
+   titlePanel("Demographic Information"), # this is a title of your app; when using comma at the end - you are adding more stuff
    
    # Sidebar with a slider input for number of bins 
    sidebarLayout( # this will set up the layout of your app; inside is sidebar pannel - inside is slider input; 
