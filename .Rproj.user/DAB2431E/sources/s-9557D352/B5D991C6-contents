@@ -15,35 +15,24 @@ ui <- fluidPage( # everything inside is an input into fluidpage function (shiny 
    
    # Application title
    titlePanel("Demographic Information"), # this is a title of your app; when using comma at the end - you are adding more stuff
-   
-   # Sidebar with a slider input for number of bins 
-   sidebarLayout( # this will set up the layout of your app; inside is sidebar pannel - inside is slider input; 
-      sidebarPanel(
-         sliderInput("bins",                 # here u r setting up how much the slider moves; inside the bins change
-                     "Number of bins:",
-                     min = 1,
-                     max = 60,
-                     value = 30)
-      ),
-      
-      # Show a plot of the generated distribution
-      mainPanel(                     # inside here we put graphs
-         plotOutput("distPlot")
-      )
+  
+     
+     # Copy the line below to make a select box 
+     selectInput("select", label = h3("Select Gender"), 
+                 choices = list("Female" = 1, "Male" = 2, "Other" = 3), 
+                 selected = 1),
+     
+     hr(),
+     fluidRow(column(3, verbatimTextOutput("value")))
+     
    )
-)
 
 # second part of shiny app is server. in this part - a server is loading a code into a computer. when user moves the botton, this action is inside the server,Define server logic required to draw a histogram
 server <- function(input, output) {
    
-   output$distPlot <- renderPlot({ # name of a place where the graph goes - here we are saying lets find "displot" - here we have regular R code that makes a plot and will go into displot
-      # generate bins based on input$bins from ui.R
-      x    <- faithful[, 2] 
-      bins <- seq(min(x), max(x), length.out = input$bins + 1)  # 
-      
-      # draw the histogram with the specified number of bins
-      hist(x, breaks = bins, col = 'darkgray', border = 'white')
-   })
+  # You can access the value of the widget with input$select, e.g.
+  output$value <- renderPrint({ input$select })
+  
 }
 
 # Run the application 
