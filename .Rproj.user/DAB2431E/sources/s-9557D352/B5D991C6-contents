@@ -19,11 +19,18 @@ ui <- fluidPage( # everything inside is an input into fluidpage function (shiny 
      
      # Copy the line below to make a select box 
      selectInput("select", label = h3("Select Gender"), 
-                 choices = list("Female" = 1, "Male" = 2, "Other" = 3), 
+                 choices = list("Female" = 1, "Male" = 2, "Other" = 3, "Martian" = 4), 
                  selected = 1),
      
      hr(),
-     fluidRow(column(3, verbatimTextOutput("value")))
+     fluidRow(column(4, verbatimTextOutput("value"))),
+  
+     selectInput("select", label = h3("Select Age"), 
+               choices = list("Adolescent" = 1, "Young Adult" = 2, "Adult" = 3 ), 
+               selected = 1),
+   
+   hr(),
+   fluidRow(column(3, verbatimTextOutput("value")))
      
    )
 
